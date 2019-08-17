@@ -277,7 +277,7 @@ collectstatic:
   volumeMounts: []
 
 migration:
-  enabled: true
+  enabled: false
   name: migration
 
   resources: {}

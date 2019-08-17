@@ -1,0 +1,21 @@
+dependencies:
+- name: postgresql
+  repository: file://../postgresql
+  version: 0.10.1
+- name: rabbitmq
+  repository: file://../rabbitmq
+  version: 0.6.8
+- name: elasticsearch
+  repository: file://../elasticsearch
+  version: 0.5.1
+- name: mongodb
+  repository: file://../mongodb
+  version: 0.4.17
+- name: wb
+  repository: file://../wb
+  version: 0.6.1
+- name: mfr
+  repository: file://../mfr
+  version: 0.7.1
+digest: sha256:6b5bf139b0fd71a4e364aa47d2d905fdf1d1a94d766a2facac01337c885b54ec
+generated: 2019-08-15T14:57:04.941516-04:00

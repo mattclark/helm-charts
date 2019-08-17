@@ -1,0 +1,22 @@
+dependencies:
+- name: postgresql
+  version: 0.10.1
+  repository: file://../postgresql
+- name: rabbitmq
+  version: 0.6.8
+  repository: file://../rabbitmq
+- name: elasticsearch
+  version: 0.5.1
+  repository: file://../elasticsearch
+- name: mongodb
+  version: 0.4.17
+  repository: file://../mongodb
+- name: wb
+  version: 0.6.1
+  repository: file://../wb
+- name: mfr
+  version: 0.7.1
+  repository: file://../mfr
+# - name: osf
+#   version: 0.16.4
+#   repository: file://../osf

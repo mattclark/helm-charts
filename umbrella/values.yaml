@@ -1,0 +1,107 @@
+postgres:
+  master:
+  standby:
+    enabled: false
+  resources:
+    limits:
+      cpu: ".5"
+      memory: "536Mi"
+  metrics:
+    enabled: false
+
+rabbitmq:
+  resources:
+    limits:
+      cpu: ".5"
+      memory: "536Mi"
+    requests: {}
+  persistence:
+    enabled: false
+  metrics:
+    enabled: false
+
+elasticsearch:
+  cluster:
+    MINIMUM_MASTER_NODES: "1"
+  client:
+    replicas: 1
+    heapSize: "512m"
+    # resources:
+    #   limits:
+    #     cpu: ".75"
+    #     memory: "1Gi"
+    #   requests:
+    #     cpu: ".5"
+    #     memory: "512Mi"
+  master:
+    replicas: 1
+    heapSize: "512m"
+    containers:
+      - name: NODE_DATA    # False in prod since we have data nodes
+        value: "true"
+      - name: NODE_INGEST  # False in prod since we have data nodes
+        value: "true"
+    # resources:
+    #   limits:
+    #     cpu: ".75"
+    #     memory: "1Gi"
+    #   requests:
+    #     cpu: ".5"
+    #     memory: "512Mi"
+  data:
+    replicas: 0            # zero for local development
+    heapSize: "100m"
+    resources:
+      limits:
+        cpu: ".5"
+        memory: "536Mi"
+      requests:
+        cpu: ".5"
+        memory: "256Mi"
+      # requests:
+      #   cpu: "25m"
+      #   memory: "536Mi"
+
+mongodb:
+  enabled: false
+  resources:
+    limits:
+      cpu: ".5"
+      memory: "256M"
+    requests: {}
+
+wb:
+  replicaCount: 1
+  nginx:
+    resources:
+      limits:
+        cpu: 200m
+        memory: 256Mi
+      requests:
+        cpu: 100m
+        memory: 128Mi
+  worker:
+    concurrency: 1
+    resources:
+      limits:
+      #   cpu: ".75"
+      #   memory: "256Mi"
+      # requests:
+      #   cpu: ".5"
+      #   memory: "128Mi"
+  rabbitmq:
+    resources:
+      limits:
+        cpu: ".5"
+        memory: "100M"
+      requests:
+        cpu: ".5"
+        memory: "50M"
+
+mfr:
+ replicaCount: 1
+ resources:
+   limits:
+     cpu: ".5"
+     memory: "50M"
+   requests: {}
